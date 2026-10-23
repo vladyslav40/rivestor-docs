@@ -20,9 +20,12 @@
     "eyebrows": "breadcrumbs",
     "codeblocks": "dark"
   },
-  "favicon": "/favicon.svg",
+  "favicon": {
+    "light": "https://rivestor.com/images/rivv.svg",
+    "dark": "https://rivestor.com/images/rivv.svg"
+  },
   "logo": {
-    "light": "/logo/light.svg",
+    "light": "https://rivestor.com/images/logo+textinter.webp",
     "dark": "/logo/dark.svg",
     "href": "https://rivestor.com"
   },
