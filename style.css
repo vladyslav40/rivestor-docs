@@ -57,8 +57,8 @@
   border-color: var(--rv-border);
 }
 
-/* Primary button: deep plum, white text, flat. */
-#navbar a[href="https://rivestor.com"] {
+/* Primary button: deep plum, white text, flat. Excludes the logo link. */
+#navbar a[href="https://rivestor.com"]:not(:has(img)) {
   background-color: var(--rv-plum);
   color: #ffffff;
   box-shadow: none;
@@ -68,4 +68,28 @@
 :focus-visible {
   outline: 2px solid var(--rv-amethyst);
   outline-offset: 2px;
+}
+
+/* 1. Larger logo in the header */
+header a[href*="rivestor"] img,
+header img[alt*="logo" i],
+header img[src*="logo"] {
+  height: 34px !important;
+  max-height: 34px !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
+
+/* 2. Rounded Launch App button */
+header a[href*="rivestor.com"],
+header a:has(span),
+a[href*="rivestor.com"]:has(span) {
+  border-radius: 8px !important;
+}
+
+/* 3. Hide the floating "Ask a question" input */
+div:has(> input[placeholder*="Ask"]),
+div[class*="floating"],
+div:has(> button[aria-label*="Ask"]) {
+  display: none !important;
 }
