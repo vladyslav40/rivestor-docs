@@ -23,7 +23,8 @@
   "favicon": "/favicon.svg",
   "logo": {
     "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "dark": "/logo/dark.svg",
+    "href": "https://rivestor.com"
   },
   "navigation": {
     "tabs": [
@@ -41,7 +42,7 @@
           },
           {
             "group": "Account",
-            "icon": "user-shield",
+            "icon": "shield-check",
             "pages": [
               "account/create-account",
               "account/verification",
@@ -77,7 +78,7 @@
         "groups": [
           {
             "group": "Help",
-            "icon": "life-ring",
+            "icon": "life-buoy",
             "pages": [
               "resources/faq",
               "resources/support"
@@ -91,12 +92,12 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:support@rivestor.com"
+        "href": "mailto:vs@rivestor.com"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Open Rivestor",
+      "label": "Launch App",
       "href": "https://rivestor.com"
     }
   },
@@ -106,10 +107,24 @@
       "view",
       "chatgpt",
       "claude",
-      "perplexity",
       "mcp",
       "cursor",
       "vscode"
     ]
+  },
+  "description": "Official documentation for Rivestor",
+  "icons": {
+    "library": "lucide"
+  },
+  "fonts": {
+    "family": "Inter"
+  },
+  "footer": {
+    "socials": {
+      "linkedin": "https://www.linkedin.com/company/rivestor",
+      "website": "https://rivestor.com/",
+      "instagram": "https://instagram.com/rivestor",
+      "telegram": "https://t.me/rivestor"
+    }
   }
 }
