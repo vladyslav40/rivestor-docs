@@ -14,12 +14,16 @@
 
 ## Terminology
 
-{/* Add product-specific terms and preferred usage */}
-{/* Example: Use "workspace" not "project", "member" not "user" */}
+- Product name: Rivestor (an investment platform)
+- Refer to the reader as "you"; don't invent fees, limits, regulators, timings, or endpoints. Mark unknown facts with `{/* TODO: confirm */}`
 
 ## Style preferences
 
 {/* Add any project-specific style rules below */}
+
+- Visual theme is "dark amethyst": background `#0B0A10`, cards `#120F1A`, borders `#221C30`
+- Primary actions are white-on-obsidian or deep plum `#4C1D95`; don't use neon purple (`#7C3AED`, `#6D28D9`)
+- No glows: no accent `box-shadow`, `text-shadow`, or blurred gradients
 
 - Use active voice and second person ("you")
 - Keep sentences concise — one idea per sentence
@@ -29,5 +33,5 @@
 
 ## Content boundaries
 
-{/* Define what should and shouldn't be documented */}
-{/* Example: Don't document internal admin features */}
+- Document customer-facing features and the public API only
+- Don't present anything as financial advice

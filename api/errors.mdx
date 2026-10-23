@@ -1,0 +1,20 @@
+---
+title: "Errors"
+description: "How the API reports problems."
+icon: "triangle-exclamation"
+---
+
+The API uses standard HTTP status codes. {/* TODO: confirm error body format */}
+
+| Status | Meaning |
+| --- | --- |
+| `400` | The request is invalid. |
+| `401` | The API key is missing or invalid. |
+| `403` | Your key does not have permission for this action. |
+| `404` | The resource does not exist. |
+| `429` | You sent too many requests. Retry later. |
+| `5xx` | Something went wrong on our side. |
+
+<Note>
+  Retry `429` and `5xx` responses with exponential backoff. Do not retry `4xx` responses without changing the request.
+</Note>

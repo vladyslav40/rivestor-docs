@@ -1,47 +1,67 @@
 ---
 title: "Quickstart"
-description: "Begin with a guide on the fastest path to a successful outcome"
+description: "Go from sign-up to your first investment."
+icon: "rocket"
 ---
 
-Describe how someone begins using your product. What is the first thing they need to do? Are there any prerequisites?
-
-A quickstart should take someone from zero to using your product. They'll get a quick win and a sense of what they can accomplish.
+This guide takes you through the full path: account, verification, funding, and your first investment.
 
 ## Prerequisites
 
-Before you begin, you must have:
+Before you begin, you need:
 
-- Requirement one (for example, Node.js 18+, a free account, an API key)
-- Requirement two (for example, a compatible device, a compatible browser, a compatible operating system)
+- A valid email address
+- A government-issued ID for identity verification
+- A bank account or other funding source supported by Rivestor {/* TODO: confirm supported funding methods */}
 
 ## Get started
 
 <Steps>
-  <Step title="Install">
-    Describe how to install your product or sign up.
+  <Step title="Create your account">
+    Sign up with your email and choose a strong password. Confirm your email address from the message we send you.
 
-    ```bash
-    npm install your-package
-    ```
+    See [Create an account](/account/create-account) for details.
   </Step>
-  <Step title="Configure">
-    Describe any setup or configuration needed before first use.
+  <Step title="Verify your identity">
+    Submit your ID and the personal details we ask for. You can browse the platform while the review is in progress.
 
-    ```bash
-    your-cli init
-    ```
+    See [Identity verification](/account/verification).
   </Step>
-  <Step title="Run it">
-    Show the first thing a user does to see it working.
+  <Step title="Secure your account">
+    Turn on two-factor authentication before you add funds.
 
-    ```bash
-    your-cli start
-    ```
+    <Warning>
+      Never share your verification codes or password with anyone. Rivestor staff never ask for them.
+    </Warning>
+  </Step>
+  <Step title="Add funds">
+    Link a funding source and make a deposit. See [Deposits and withdrawals](/investing/deposits-withdrawals).
+  </Step>
+  <Step title="Make your first investment">
+    Create a portfolio and allocate your funds. See [Portfolios](/investing/portfolios).
   </Step>
 </Steps>
 
-<Tip>
-  Give people a way to get help. This could be a link to a support page, a chat with a customer support agent, or a forum for your product.
+## Prefer to automate?
 
-  Example: Need help? Reach out to us at [support@yourcompany.com](mailto:support@yourcompany.com).
+<Tabs>
+  <Tab title="Web app">
+    Do every step above in the Rivestor web app. No code required.
+  </Tab>
+  <Tab title="API">
+    Create an API key and read your account data programmatically.
+
+    ```bash
+    curl https://api.rivestor.com/v1/accounts \
+      -H "Authorization: Bearer $RIVESTOR_API_KEY"
+    ```
+
+    {/* TODO: confirm base URL and endpoint */}
+
+    Continue with [Authentication](/api/authentication).
+  </Tab>
+</Tabs>
+
+<Tip>
+  Stuck at any step? Contact us through the [Support](/resources/support) page.
 </Tip>

@@ -1,0 +1,71 @@
+/*
+ * Rivestor "dark amethyst" refinements.
+ * Brand rules: obsidian background, midnight-violet cards, slate-violet borders.
+ * No neon purple (#7C3AED / #6D28D9) and no glows (box-shadow, text-shadow, blur).
+ */
+
+:root {
+  --rv-obsidian: #0b0a10;
+  --rv-card: #120f1a;
+  --rv-border: #221c30;
+  --rv-plum: #4c1d95;
+  --rv-amethyst: #b197e6;
+}
+
+/* Cards: flat midnight-violet surface, border shift on hover (no shadow). */
+.dark .card,
+.dark a.card {
+  background-color: var(--rv-card);
+  border-color: var(--rv-border);
+  box-shadow: none;
+  transition: border-color 0.15s ease;
+}
+
+.dark a.card:hover {
+  border-color: var(--rv-plum);
+}
+
+.dark .card h2,
+.dark .card [data-component-part="card-title"] {
+  color: #f4f1fa;
+}
+
+/* Accordions, tabs, steps, callouts share the same border color. */
+.dark .accordion,
+.dark details,
+.dark .tabs,
+.dark [data-component-part="tab-content"] {
+  border-color: var(--rv-border);
+}
+
+.dark .callout {
+  border-color: var(--rv-border);
+}
+
+/* Code blocks sit on the card surface. */
+.dark .code-block,
+.dark pre {
+  background-color: var(--rv-card);
+  border-color: var(--rv-border);
+  box-shadow: none;
+}
+
+/* Tables */
+.dark table,
+.dark th,
+.dark td {
+  border-color: var(--rv-border);
+}
+
+/* Primary button: deep plum, white text, flat. */
+#navbar a[href="https://rivestor.com"] {
+  background-color: var(--rv-plum);
+  color: #ffffff;
+  box-shadow: none;
+}
+
+/* Focus ring stays visible for keyboard users. */
+:focus-visible {
+  outline: 2px solid var(--rv-amethyst);
+  outline-offset: 2px;
+}
