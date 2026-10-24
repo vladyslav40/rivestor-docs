@@ -106,3 +106,13 @@ div:has(> button[aria-label*="Ask"]) {
   letter-spacing: 0.02em;
   font-weight: 600;
 }
+
+/* Previous / next page links: more breathing room above the divider line */
+#pagination {
+  margin-top: 56px;
+}
+
+#pagination a {
+  padding-top: 8px;
+  padding-bottom: 20px;
+}

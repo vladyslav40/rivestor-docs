@@ -36,7 +36,7 @@
         "groups": [
           {
             "group": "Get started",
-            "icon": "rocket",
+            "icon": "compass",
             "pages": [
               "index",
               "quickstart",
