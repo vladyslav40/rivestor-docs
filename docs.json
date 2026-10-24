@@ -25,8 +25,8 @@
     "dark": "https://rivestor.com/images/rivv.svg"
   },
   "logo": {
-    "light": "https://rivestor.com/images/blogo.webp",
-    "dark": "https://rivestor.com/images/rivestor-logo.png",
+    "light": "/logo/light.png",
+    "dark": "/logo/dark.png",
     "href": "https://rivestor.com"
   },
   "navigation": {

@@ -70,12 +70,11 @@
   outline-offset: 2px;
 }
 
-/* 1. Larger logo in the header */
+/* Header logo: height matches the search bar row */
 header a[href*="rivestor"] img,
-header img[alt*="logo" i],
-header img[src*="logo"] {
-  height: 34px !important;
-  max-height: 34px !important;
+header img[alt*="logo" i] {
+  height: 38px !important;
+  max-height: 38px !important;
   width: auto !important;
   object-fit: contain !important;
 }
