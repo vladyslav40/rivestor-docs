@@ -92,3 +92,17 @@ div[class*="floating"],
 div:has(> button[aria-label*="Ask"]) {
   display: none !important;
 }
+
+/* Sidebar: section titles in caps with a divider between sections; pages stay icon-free */
+#navigation-items > li:not(:first-child) {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--rv-border);
+}
+
+.sidebar-group-header h5,
+#sidebar-title {
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+}
