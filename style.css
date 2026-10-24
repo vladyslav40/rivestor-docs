@@ -57,21 +57,31 @@
   border-color: var(--rv-border);
 }
 
-/* Launch App: large rounded pill in deep amethyst, white text. Excludes the logo link. */
+/* Launch App: compact rounded pill in deep amethyst, white text. Excludes the logo link. */
 #navbar a[href="https://rivestor.com"]:not(:has(img)) {
   background-color: #4c1d95 !important;
   border: 0 !important;
-  border-radius: 16px !important;
+  border-radius: 11px !important;
   color: #ffffff !important;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 500;
-  padding: 10px 18px !important;
+  padding: 7px 13px !important;
   box-shadow: none !important;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 #navbar a[href="https://rivestor.com"]:not(:has(img)):hover {
   background-color: #5b2ba6 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4) !important;
+}
+
+#navbar a[href="https://rivestor.com"]:not(:has(img)) svg {
+  transition: transform 0.2s ease;
+}
+
+#navbar a[href="https://rivestor.com"]:not(:has(img)):hover svg {
+  transform: translateX(2px);
 }
 
 /* Ask Assistant button next to search: hidden */
@@ -141,7 +151,7 @@ div:has(> button[aria-label*="Ask"]) {
 #navigation-items li[data-active="true"] > a {
   background-color: rgba(177, 151, 230, 0.1) !important;
   border: 0 !important;
-  border-radius: 16px !important;
+  border-radius: 13px !important;
   color: #b197e6 !important;
   font-weight: 500;
   box-shadow: none !important;
