@@ -1,0 +1,40 @@
+---
+title: "Buying and trading"
+description: "Primary offerings, the secondary market and atomic settlement."
+---
+
+<Note>
+  Secondary trading for eligible investors arrives with **Stage 2**. This page describes the target design.
+</Note>
+
+## Primary offerings
+
+When an asset is listed, its primary offering opens on the RTCS Venue to eligible investors only. Buyers purchase fractions of the rToken. The success fee is paid by the issuer, so primary purchases carry no trading fee for you.
+
+## Secondary market
+
+After the primary offering you can sell to other eligible holders. All trades run on one order book, so liquidity for any asset is shared with every integrated app.
+
+<Steps>
+  <Step title="Place or accept an order">
+    The venue uses an on-chain order book with request-for-quote. Only whitelisted RTCS program accounts can hold rTokens as pool inventory.
+  </Step>
+  <Step title="The Compliance Hook checks both sides">
+    Sender and recipient attestations, sanctions flags, jurisdiction, lock-ups and holder limits are verified in the same transaction.
+  </Step>
+  <Step title="Settlement is atomic">
+    The rToken leg and the USDC or USDT leg either both execute or both fail. There is no escrow agent and no settlement window.
+  </Step>
+</Steps>
+
+<Info>
+  Rivestor uses an order book rather than a permissionless AMM because Transfer Hooks are not compatible with permissionless AMM pools.
+</Info>
+
+## Fees
+
+Investors pay a transaction fee on secondary trades and an exit fee when unwrapping. Both are collected automatically. See [Fees](/issuers/fees) for how each stream is collected.
+
+## Trading across apps
+
+Every transfer of an rToken is subject to the same rules whether it happens in the Rivestor app, a partner wallet or another venue, because the checks live in the token.

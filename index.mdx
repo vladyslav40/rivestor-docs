@@ -1,37 +1,55 @@
 ---
-title: "Welcome to Rivestor"
-description: "Everything you need to open an account, fund it, and start investing with Rivestor."
+title: "Rivestor documentation"
+description: "One marketplace and one token standard for real-world assets on Solana."
 ---
 
-Rivestor is an investment platform. These docs show you how to set up your account, manage your portfolios, and connect your own tools through the API.
+Rivestor is a marketplace on Solana where issuers list tokenized real-world assets and investors discover, buy and resell them in one place. It is built on **RTCS** (Rivestor Tokenized Controlling System), a set of Solana programs, legal templates and operating procedures that wrap every listed asset into a single token standard, the **rToken**.
 
-<Note>
-  New here? Follow the [Quickstart](/quickstart) to go from sign-up to your first investment.
-</Note>
+<Info>
+  **Status.** Rivestor is in private beta (MVP V1). The full RTCS release, including the fractional marketplace, is **Stage 2** and is in development. This documentation describes both what runs today and the target design, and labels each page accordingly. See [Status and roadmap](/status).
+</Info>
 
-## Where to start
+## Choose your path
 
 <CardGroup cols={2}>
-  <Card title="Quickstart" icon="rocket" href="/quickstart">
-    Create an account, verify your identity, and make your first investment.
+  <Card title="Investors" icon="user-check" href="/investors/getting-started">
+    Verify once, hold rTokens in your own wallet, receive income and exit on the secondary market.
   </Card>
-  <Card title="Key concepts" icon="book-open" href="/concepts">
-    Learn the terms used across the platform.
+  <Card title="Issuers" icon="building-2" href="/issuers/overview">
+    List an asset through direct tokenization or wrap a token you already issued.
   </Card>
-  <Card title="Account and security" icon="shield-check" href="/account/create-account">
-    Set up your profile, verification, and protection for your account.
+  <Card title="Protocol" icon="blocks" href="/protocol/architecture">
+    Solana programs, Token-2022 extensions, the Compliance Hook and the Embedded SDK.
   </Card>
-  <Card title="Investing" icon="chart-line" href="/investing/portfolios">
-    Build portfolios and move money in and out.
-  </Card>
-  <Card title="API reference" icon="code" href="/api/overview">
-    Authenticate and automate your workflows.
-  </Card>
-  <Card title="Support" icon="life-buoy" href="/resources/support">
-    Get help from the Rivestor team.
+  <Card title="Legal and compliance" icon="scale" href="/legal/three-pillars">
+    SPV structure, Security Trustee, title protection and jurisdictional design.
   </Card>
 </CardGroup>
 
-<Info>
-  Investing involves risk. Nothing in these docs is financial advice.
-</Info>
+## How an asset moves through Rivestor
+
+<Steps>
+  <Step title="List">
+    An issuer or asset owner passes due diligence and either tokenizes an off-chain asset through the SPV Factory (Engine A) or deposits an existing token into an RTCS vault (Engine B).
+  </Step>
+  <Step title="Wrap">
+    RTCS mints an rToken. Whitelists, KYC/AML attestations and geographic rules are enforced in code on every transfer.
+  </Step>
+  <Step title="Invest and trade">
+    Eligible investors buy after a single KYC, receive distributions, trade on the secondary market or unwrap to the underlying asset.
+  </Step>
+</Steps>
+
+## Design principles
+
+| Principle | What it means |
+| --- | --- |
+| Non-custodial | Rivestor never holds user funds. Investors use self-custodial wallets, and originals sit in program-owned vaults that no one holds a key to. |
+| Compliance in code | Eligibility, jurisdiction, lock-ups and holder limits are checked by the token itself on every transfer, not by policy alone. |
+| One standard | Every asset, natively issued or wrapped, trades as an rToken with the same behavior, settlement path and disclosure surface. |
+| Open market | Anyone can list and anyone eligible can invest. Rivestor aggregates supply rather than selling its own assets. |
+| Legal isolation first | Each natively issued asset sits in a bankruptcy-remote vehicle with an independent Security Trustee. |
+
+<Warning>
+  Nothing in this documentation is an offer, a solicitation or investment, legal or tax advice. Rivestor does not set or guarantee returns. Read the [disclaimer](/legal/disclaimer) and the [investor risks](/investors/risks).
+</Warning>

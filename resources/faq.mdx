@@ -1,19 +1,37 @@
 ---
 title: "FAQ"
-description: "Quick answers to common questions."
+description: "Answers to common questions about Rivestor, rTokens and RTCS."
 ---
 
 <AccordionGroup>
-  <Accordion title="How do I get started?">
-    Follow the [Quickstart](/quickstart).
+  <Accordion title="What is Rivestor?">
+    A marketplace on Solana where issuers list tokenized real-world assets and investors discover, buy and resell them. See [How Rivestor works](/how-it-works).
   </Accordion>
-  <Accordion title="Why do I need to verify my identity?">
-    Verification confirms who you are before you can invest. See [Identity verification](/account/verification).
+  <Accordion title="What is an rToken?">
+    Rivestor's universal token standard for real-world assets: an SPL Token-2022 mint bound to the RTCS Compliance Hook. See [rTokens](/concepts/rtokens).
   </Accordion>
-  <Accordion title="How do I keep my account secure?">
-    Turn on two-factor authentication and use a unique password. See [Account security](/account/security).
+  <Accordion title="Does Rivestor hold my funds or assets?">
+    No. Investors use self-custodial wallets, and wrapped originals sit in program-owned vaults that no key can withdraw from. See [Regulatory approach](/legal/regulatory-approach).
   </Accordion>
-  <Accordion title="Can I lose money investing?">
-    Yes. The value of investments can go down as well as up.
+  <Accordion title="Does Rivestor guarantee returns?">
+    No. Issuers set terms, and Rivestor does not set or guarantee returns. See [Investor risks](/investors/risks).
+  </Accordion>
+  <Accordion title="What stops an owner from selling the asset behind a token?">
+    For natively issued assets, the SPV's equity is entirely on the token register, an independent Security Trustee holds the Golden Share, and a title protection package registers a restriction, a first-ranking charge and a negative pledge. See [Three-pillar architecture](/legal/three-pillars).
+  </Accordion>
+  <Accordion title="What happens if I lose my wallet keys?">
+    Under Security Trustee and Compliance Committee multisig, and on verified identity through the Registrar, the Permanent Delegate extension can burn and reissue your balance. See [Compliance Hook](/protocol/compliance-hook).
+  </Accordion>
+  <Accordion title="Which assets can be listed?">
+    Real estate, private credit and commodities, with private business equity also supported through the SPV Factory. Rivestor does not list tokenized stocks, bonds or T-bills. See [Asset classes](/investors/asset-classes).
+  </Accordion>
+  <Accordion title="Is there an API?">
+    Not yet. There is no public REST API. Integration is through the RTCS programs on Solana and, from Stage 2, the Embedded SDK. See [Embedded SDK](/protocol/embedded-sdk).
+  </Accordion>
+  <Accordion title="Who can invest?">
+    It depends on your jurisdiction and the series. Reg S pools admit non-US persons. Reg D pools admit accredited US investors. See [Getting started](/investors/getting-started).
+  </Accordion>
+  <Accordion title="When does the full marketplace launch?">
+    The private beta (MVP V1) is under way. The fractional marketplace on RTCS is Stage 2. See [Status and roadmap](/status).
   </Accordion>
 </AccordionGroup>

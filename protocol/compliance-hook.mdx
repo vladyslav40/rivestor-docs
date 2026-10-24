@@ -1,0 +1,39 @@
+---
+title: "Compliance Hook"
+description: "The six checks executed on every rToken transfer."
+---
+
+The RTCS Compliance Hook is the Transfer Hook program bound to every rToken mint. The Solana runtime invokes it on each transfer. If any check fails, the transaction reverts.
+
+<Steps>
+  <Step title="Identity">
+    Both sender and recipient hold an unexpired attestation under the Solana Attestation Service, issued by an approved credential issuer (KYC/AML through providers such as Sumsub, among others), or are whitelisted program accounts such as the RTCS Venue, Vaults and Liquidity Vaults.
+  </Step>
+  <Step title="Sanctions and status">
+    No sanctions or adverse flag on either attestation. The attestation has not been revoked.
+  </Step>
+  <Step title="Jurisdiction">
+    The recipient's residence class is permitted for the series. Reg S pools accept non-US persons only. Reg D pools accept accredited US investors only. Jurisdictions without a valid offering basis are blocked.
+  </Step>
+  <Step title="Lock-ups">
+    Reg D 12-month and Reg S distribution-compliance periods are enforced per lot using an on-chain lot record.
+  </Step>
+  <Step title="Investor-count limits">
+    Holder counters in writable PDAs increment when a balance rises from zero and decrement when it reaches zero. For a US issuer with total assets above $10M, the hook keeps the series below the Exchange Act section 12(g) thresholds of 2,000 holders of record or 500 non-accredited holders, unless a conditional exemption applies (for example Regulation A Tier 2 with a registered transfer agent).
+  </Step>
+  <Step title="Individual limits">
+    Per-investor caps, for example Reg A Tier 2 non-accredited investment limits or concentration limits set by the issuer.
+  </Step>
+</Steps>
+
+## Compliance inheritance
+
+For wrapped assets (Engine B), the hook enforces the union of the RTCS rule-set and the issuer's own eligibility rules.
+
+## Recovery without dilution
+
+Lost keys, court orders and estate succession are handled through the Permanent Delegate. Under Security Trustee and Compliance Committee multisig, and on verified identity through the Registrar, an rToken balance can be burned and reissued, so the register is never diluted.
+
+<Info>
+  Because compliance is evaluated inside the token, the same rules apply in the Rivestor app, a partner wallet or any other venue.
+</Info>

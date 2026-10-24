@@ -1,0 +1,51 @@
+---
+title: "Getting started as an investor"
+description: "Verify once, connect a self-custodial wallet and become eligible to hold rTokens."
+---
+
+Rivestor is non-custodial. You hold rTokens in your own Solana wallet, and eligibility is attested on-chain rather than stored in a Rivestor account.
+
+<Note>
+  The marketplace is in **private beta**. Access is limited and granted through a waitlist. The full fractional marketplace on RTCS is Stage 2. See [Status and roadmap](/status).
+</Note>
+
+## What you need
+
+- A self-custodial Solana wallet
+- A government-issued ID for identity verification
+- Eligibility for the pool you want to join (see [Jurisdiction rules](#jurisdiction-rules))
+
+## Onboarding
+
+<Steps>
+  <Step title="Join the waitlist or accept an invitation">
+    Private beta access is granted in limited batches. Pre-deposits from early users help test demand before launch.
+  </Step>
+  <Step title="Verify your identity once">
+    KYC and AML checks run through a provider such as Sumsub. When you pass, an approved credential issuer writes an attestation to the Solana Attestation Service (SAS) for your wallet.
+  </Step>
+  <Step title="Your token account is unlocked">
+    New rToken accounts are created frozen. Once your wallet holds a valid attestation, the RTCS KYC Authority thaws the account. A wallet that is not verified cannot receive rTokens.
+  </Step>
+  <Step title="Buy, hold and trade">
+    The same credential works for any rToken and any integrated app, so you do not repeat onboarding for each asset.
+  </Step>
+</Steps>
+
+## Jurisdiction rules
+
+Eligibility depends on where you live and how the series is offered. These rules are enforced by the token, not by policy alone.
+
+| Pool | Admitted investors | Controls |
+| --- | --- | --- |
+| Reg S pool | Non-US persons | Distribution-compliance period enforced on-chain, no flow-back to US persons during that period |
+| Reg D pool | Accredited US investors | 12-month lock-up enforced per lot by the hook |
+| Other | Depends on the series and the licensed venue entity | Shown on the listing |
+
+<Warning>
+  Availability differs by country and by asset. A listing is only open to you if your attestation satisfies that series' rules.
+</Warning>
+
+## Your credentials stay yours
+
+Only a hashed reference sits on-chain in your attestation. The identity map linking your wallet to your verified identity is kept off-chain and encrypted by a Registrar, which keeps the legal register complete while respecting UK and EU data protection rules.

@@ -1,0 +1,39 @@
+---
+title: "SPV structure"
+description: "Bankruptcy-remote series, the whole-equity rule, the Golden Share and the token register."
+---
+
+For every natively issued asset, Rivestor uses a statutory series or cell structure, represented on Solana as a member of the Master Series token group.
+
+## Vehicles by jurisdiction
+
+| Asset location | Vehicle |
+| --- | --- |
+| United States | Delaware Registered Series LLC (with a single-asset subsidiary LLC for institutional assets) |
+| United Kingdom | UK SPV Ltd |
+| Middle East | ADGM SPV or protected cell company |
+| Non-US multi-asset pools | Cayman SPC or ADGM cell structure |
+
+## Core protections
+
+<AccordionGroup>
+  <Accordion title="Bankruptcy-remote series">
+    The asset is transferred onto the balance sheet of a single-purpose vehicle, isolated from the debts and insolvency of the original owner. The constitution includes separateness covenants (own books, own bank account, no commingling, no guarantees of third-party debt), limited-purpose objects and non-petition undertakings from service providers.
+  </Accordion>
+  <Accordion title="Whole-equity rule">
+    100% of the SPV's economic equity is represented by rTokens on a single register. The original owner's retained stake is held as rTokens too, optionally in a lock-up, so no off-chain interest exists that could be sold, pledged or diluted outside the register.
+  </Accordion>
+  <Accordion title="Golden Share (independent director)">
+    A licensed, independent Security Trustee is appointed to the SPV's board or as a special member. Without its consent it is impossible to sell or charge the asset, amend the constitution, issue new interests, merge, change the property manager outside the agreed process, or file for voluntary insolvency.
+  </Accordion>
+  <Accordion title="Token register as statutory cap table">
+    The constitution (Articles of Association or Series Operating Agreement) provides that the sole official register of members and holders of interests is the record of balances of the Token-2022 mint on Solana, as reconciled by the Registrar. Any purported transfer that is not recorded on that register is void as against the company.
+  </Accordion>
+  <Accordion title="Golden Record">
+    Solana balances sit in pseudonymous wallets, so the legal register combines on-chain balances with an identity map held by an appointed Registrar (a registered transfer agent for US-sited series). The identity map is encrypted and kept off-chain. Only a hashed reference sits in the holder's on-chain attestation, which keeps the register legally complete while meeting UK and EU data-protection rules.
+  </Accordion>
+</AccordionGroup>
+
+<Info>
+  The SPV Factory creates series under statutory structures that are designed to avoid forming a new company per asset. Structuring effort is sized to the asset through the [listing tracks](/issuers/listing-tracks).
+</Info>

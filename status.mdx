@@ -1,0 +1,44 @@
+---
+title: "Status and roadmap"
+description: "What is available today, what ships in Stage 2, and where the platform is heading."
+---
+
+Rivestor is built in three stages. Each stage ends at a defined exit gate and builds on the same rToken standard.
+
+## Where Rivestor is today
+
+<Check>
+  **Stage 1, marketplace in private beta (MVP V1).** The marketplace is built and opening to a limited number of users through a waitlist, limited log-ins and pre-deposits. This tests demand and supply with exclusive assets before the protocol goes live.
+</Check>
+
+<Note>
+  There is **no public REST API** at this stage. Integration happens through the RTCS programs on Solana and, from Stage 2, the Embedded SDK. See [Embedded SDK](/protocol/embedded-sdk).
+</Note>
+
+## Stages
+
+| Stage | Purpose | What ships | Indicative timing |
+| --- | --- | --- | --- |
+| **1. Marketplace and liquidity** | Test demand and supply with exclusive assets | Private beta, waitlist, limited log-ins, pre-deposits; wrapping of already on-chain assets (Engine B); first Engine A pilot series | Q4 2026 to Q2 2027 |
+| **2. RTCS for any asset** | Fractional ownership and investing | Full SPV Factory for real estate, private credit and commodities; global wrapping of third-party issuers; secondary trading for eligible investors; fiat on- and off-ramp; Embedded SDK beta | H2 2027 to 2028 |
+| **3. RWA ecosystem** | Make the rToken the standard | Partner widgets, Liquidity Vaults, Auto-Compounding Vaults, AI agents, own venue licences, access for US retail through partner structures | 2029 to 2030 |
+
+Timing is indicative and depends on audits, licensing and market conditions.
+
+## Gates before mainnet
+
+<Steps>
+  <Step title="Independent audits">
+    The RTCS Vault, Compliance Hook, Fee Router and Distribution programs are audited by at least two independent firms before they move from devnet to mainnet.
+  </Step>
+  <Step title="Verifiable builds">
+    Programs are deployed from verifiable builds so anyone can check that the on-chain code matches the audited source.
+  </Step>
+  <Step title="Staged exposure">
+    New vaults run under a TVL cap during their first months. Improvements ship as new vault versions that holders opt into.
+  </Step>
+</Steps>
+
+<Warning>
+  Features marked **Stage 2** or **Stage 3** in these docs describe the target design and are not yet available.
+</Warning>

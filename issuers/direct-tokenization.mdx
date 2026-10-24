@@ -1,0 +1,47 @@
+---
+title: "Direct tokenization (Engine A)"
+description: "The onboarding cycle that takes an off-chain asset to a listed rToken."
+---
+
+<Note>
+  Engine A starts as a pilot in Stage 1 with one flagship series. The full SPV Factory is a Stage 2 deliverable.
+</Note>
+
+Engine A turns an off-chain asset into a bankruptcy-remote series and mints its rToken. The cycle is designed to be largely automated, with human sign-off at the points that matter.
+
+<Steps>
+  <Step title="Data input">
+    The owner uploads title documents, the valuation report, leases or loan files and corporate documents.
+  </Step>
+  <Step title="AI-assisted underwriting">
+    Document-parsing agents abstract leases, cross-check title and charges, flag anomalies and draft a risk summary. A human underwriter signs off and stays accountable for every listing.
+  </Step>
+  <Step title="Legal document generation">
+    The platform generates the series designation, Operating Agreement, Investor Protection Deed, Notice of Direction and trustee appointment.
+  </Step>
+  <Step title="E-signature">
+    The owner and the Security Trustee execute the documents through an e-signature API.
+  </Step>
+  <Step title="Title protection">
+    The restriction, first-ranking charge and Lockbox are registered and confirmed by local counsel.
+  </Step>
+  <Step title="Hash anchoring">
+    SHA-256 hashes of the executed documents are written into the rToken's Token Metadata.
+  </Step>
+  <Step title="Minting">
+    The Issuance program creates the Token-2022 mint with the RTCS extension profile, initializes the Compliance Hook rule-set and mints 100% of the equity: the investor allocation plus the owner's retained, locked class.
+  </Step>
+  <Step title="Listing">
+    The primary offering opens on the RTCS Venue to eligible investors only.
+  </Step>
+</Steps>
+
+## Whole-equity rule
+
+All of the SPV's economic equity is represented by rTokens on one register. The owner's retained stake is held as rTokens too, optionally in a lock-up. No off-chain interest exists that could be sold, pledged or diluted outside the register.
+
+<Info>
+  The SPV Factory is designed to create a new series within 24 hours, with documents generated automatically and the rToken minted as a member of the Master token group.
+</Info>
+
+See [SPV structure](/legal/spv-structure) and [listing tracks](/issuers/listing-tracks).

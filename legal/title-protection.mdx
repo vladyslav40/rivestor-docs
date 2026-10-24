@@ -1,0 +1,39 @@
+---
+title: "Title protection and Lockbox"
+description: "Layer 2: how title and cash flows are controlled for the benefit of rToken holders."
+---
+
+## Cash-flow control
+
+<Steps>
+  <Step title="Notice of Direction">
+    All tenants (or, for private credit, all obligors) sign an irrevocable Notice of Direction to remit payments exclusively to a Lockbox account controlled by the Security Trustee, bypassing the former owner and the property manager.
+  </Step>
+  <Step title="Operating waterfall">
+    Operating expenses are released from the Lockbox under an agreed waterfall.
+  </Step>
+  <Step title="Automated distribution">
+    The trustee's banking rail converts receipts into USDC through a regulated on-ramp and funds the RTCS Distribution program, which pays holders pro rata against a record-date snapshot.
+  </Step>
+</Steps>
+
+## Title Protection Package
+
+An equity holder cannot be secured by a mortgage over its own company's property, because a charge must secure an obligation. Rivestor therefore registers a three-part package.
+
+| Part | Mechanism |
+| --- | --- |
+| 1. Restriction or consent requirement | A restriction on the title register in favour of the Security Trustee. In England and Wales, a Land Registry restriction requiring the trustee's written consent to any disposition. |
+| 2. First-ranking legal charge | A charge in favour of the Security Trustee securing the SPV's obligations under an **Investor Protection Deed**: no disposal, no encumbrance, distribution waterfall, and a liquidated-damages claim equal to net asset value on breach. |
+| 3. Negative pledge | A negative pledge in the SPV's constitution. |
+
+For private-credit assets, the Security Trustee holds a true first-lien security interest over the borrower's collateral for the benefit of rToken holders.
+
+## Alignment of fees and taxes
+
+- The platform's management fee is subordinated to investor distributions.
+- Where required, a tax withholding module in the Distribution program applies withholding using the holder's tax-status attestation and routes the amount to the paying agent.
+
+<Note>
+  Registration steps are confirmed by local counsel in each jurisdiction. Legal structures require jurisdiction-specific legal and tax opinions before implementation.
+</Note>

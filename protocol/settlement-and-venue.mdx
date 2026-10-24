@@ -1,0 +1,38 @@
+---
+title: "Settlement and venue"
+description: "Atomic delivery-versus-payment, finality and why the venue uses an order book."
+---
+
+<Note>
+  The RTCS Venue opens to eligible investors in **Stage 2**.
+</Note>
+
+## Atomic DvP
+
+A traditional purchase of a commercial property interest requires escrow agents and lawyers and takes one to two months. On the RTCS Venue, delivery versus payment is a single Solana transaction: the rToken leg, with the Compliance Hook verifying both parties, and the USDC or USDT leg either both execute or both fail.
+
+| | Traditional | RTCS Venue |
+| --- | --- | --- |
+| Counterparty process | Escrow agents and lawyers | Program-enforced |
+| Settlement | Days to months | Within seconds |
+| Failure mode | Partial or disputed closing | Both legs revert |
+
+## Finality
+
+Solana produces blocks about every 400 ms. RTCS treats a trade as legally settled only at finalized commitment. As of October 2026, the Solana Foundation describes the Alpenglow consensus upgrade as targeting deterministic finality of roughly 150 ms, compared with about 12.8 s under TowerBFT. Dates and figures are as published by the Solana Foundation and may change.
+
+<Warning>
+  If finality stalls, the venue halts automatically. No trade is treated as settled before finalized commitment.
+</Warning>
+
+## Why an order book
+
+Transfer Hooks are not compatible with permissionless AMM pools. The venue therefore uses an on-chain order book with request-for-quote, and only whitelisted RTCS program accounts can hold rTokens as pool inventory.
+
+## One pool of liquidity
+
+Natively issued and wrapped assets trade side by side as rTokens. Liquidity that would otherwise be scattered across 199+ closed venues is concentrated in one order book, and any external app that integrates rTokens adds demand to the same pool.
+
+## Stablecoin leg and fees
+
+The payment leg settles in USDC or USDT. The venue fee is charged on the stablecoin leg by the Fee Router, net of the RTCS protocol fee, so an investor never pays twice. See [Fees](/issuers/fees).

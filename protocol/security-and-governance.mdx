@@ -1,0 +1,42 @@
+---
+title: "Security and governance"
+description: "Audits, upgrade control and key management for the RTCS programs."
+---
+
+## Program lifecycle
+
+<Steps>
+  <Step title="Verifiable builds">
+    Programs are deployed from verifiable builds so anyone can check that the on-chain program matches the published source.
+  </Step>
+  <Step title="Two independent audits">
+    Programs are audited by at least two independent firms before mainnet. Audit reports will be published with each release. {/* TODO: link audit reports once available */}
+  </Step>
+  <Step title="Timelocked upgrades">
+    Program upgrade authority sits in a multisig with a mandatory timelock, so any change is visible on-chain before it takes effect.
+  </Step>
+  <Step title="Bug bounty">
+    A bug bounty complements audits.
+  </Step>
+</Steps>
+
+## Key management
+
+| Principle | In practice |
+| --- | --- |
+| No single key | No single Rivestor key can move, mint, freeze or burn any rToken. |
+| Trustee co-signature | Every extraordinary action requires the Security Trustee's signature. |
+| Reason codes | Each such action emits an on-chain reason code referencing the court order, investor request or compliance decision. |
+| Immutable vaults | Tier 1 and Tier 2 vaults are deployed without upgrade authority, so no party, Rivestor included, can alter release logic. |
+| Emergency controls | The Pausable extension is held by the Security Trustee and is time-limited. |
+
+## Operational safeguards
+
+- **TVL caps.** New vaults run under a TVL cap during their first months.
+- **Opt-in upgrades.** Improvements ship as new vault versions that holders opt into.
+- **Halt on stalled finality.** The venue stops automatically if Solana finality stalls.
+- **Reconstructable register.** The legal register can be rebuilt from the Registrar's Golden Record.
+
+<Info>
+  The security model is layered: [legal isolation](/legal/three-pillars), trustee control and on-chain enforcement each limit the damage of a failure in the others.
+</Info>

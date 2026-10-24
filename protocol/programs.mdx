@@ -1,0 +1,34 @@
+---
+title: "RTCS programs"
+description: "The on-chain programs that make up RTCS and what each one controls."
+---
+
+| Program or account | Purpose | Key properties |
+| --- | --- | --- |
+| **Issuance program** | Creates the Token-2022 mint for an Engine A series, initializes the extension profile and rule-set, mints 100% of the equity, and represents the Master Series LLC as a token group with each series as a member. | Mint authority is a PDA, released only with Security Trustee co-signature. Metadata updates require trustee co-signature. |
+| **Vault program** | Engine B. Locks an issuer's original token and mints the rToken 1:1. | Enforces `rToken supply = vault balance`. Burns on withdrawal. Tier 1 and 2 vaults have no upgrade authority. |
+| **Compliance Hook** | The Transfer Hook program invoked by the Solana runtime on every rToken transfer. | Rule-set per series. If any check fails, the whole transaction fails atomically. See [Compliance Hook](/protocol/compliance-hook). |
+| **KYC Authority (PDA)** | Thaws token accounts that are frozen by default once the owner holds a valid attestation. | Aligned with Solana Foundation sRFC-37 allow-list gating. |
+| **Distribution program** | Pays income pro rata against a record-date snapshot of the rToken register and applies tax withholding. | Funded with USDC from the trustee's regulated on-ramp. Takes the subordinated yield spread. |
+| **Fee Router (PDA)** | Harvests Token-2022 transfer fees, sells them through the venue in scheduled auctions and collects the venue fee on the stablecoin leg. | Withdraw-Withheld Authority for the Transfer Fee extension. Holds a treasury cap per series. |
+| **RTCS Venue** | On-chain order book with request-for-quote and atomic delivery-versus-payment in USDC or USDT. | Only whitelisted RTCS program accounts can hold rTokens as pool inventory. |
+| **Liquidity Vault** (Stage 3) | Borrow stablecoins against rTokens. | Dutch-auction liquidations restricted to attested bidders. |
+| **Auto-Compounding Vault** (Stage 3) | Reinvests distributions into additional fractions of the same or chosen rTokens. | Issues its own share. The underlying rToken stays strictly 1:1. |
+
+## Account model
+
+<AccordionGroup>
+  <Accordion title="Program-derived addresses">
+    Mint authorities, vault accounts and fee routers are PDAs. They have no private key, so no individual can sign for them.
+  </Accordion>
+  <Accordion title="Holder counters">
+    Writable PDAs maintain the investor count per series. A counter increments when a balance rises from zero and decrements when it reaches zero. The hook uses them to keep the series below statutory holder thresholds.
+  </Accordion>
+  <Accordion title="Lot records">
+    Lock-ups such as Reg D 12-month periods are enforced per lot using an on-chain lot record.
+  </Accordion>
+</AccordionGroup>
+
+<Info>
+  Extraordinary actions such as minting beyond the plan, freezing, forced transfer or burn require the Security Trustee's signature and emit an on-chain reason code that references the court order, investor request or compliance decision.
+</Info>

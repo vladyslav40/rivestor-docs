@@ -1,0 +1,24 @@
+---
+title: "Glossary"
+description: "Terms used across the Rivestor documentation."
+---
+
+| Term | Definition |
+| --- | --- |
+| **RTCS** | Rivestor Tokenized Controlling System: the Solana programs (Rust and Anchor), legal templates and operating procedures that issue, wrap, govern, settle and distribute rTokens. |
+| **rToken** | Rivestor's universal RWA token standard: an SPL Token-2022 mint with a fixed extension profile, bound to the RTCS Compliance Hook. |
+| **Engine A** | Direct asset tokenization through the SPV Factory. Native issuance for off-chain assets. |
+| **Engine B** | 1:1 non-custodial wrapping of RWA tokens already issued by third parties. |
+| **SPV Factory** | The system that creates a legal series per asset as a member of a Master Series LLC (or equivalent cell structure) and mints its rToken. |
+| **Security Trustee** | An independent, licensed fiduciary that holds the Golden Share, the title protection package and the co-signing key for extraordinary on-chain actions. |
+| **Golden Share** | A special share held by the Security Trustee. Without its consent the asset cannot be sold, charged or restructured. |
+| **Lockbox** | A bank account controlled by the Security Trustee that receives rent or repayments directly, bypassing the former owner and property manager. |
+| **Notice of Direction** | An irrevocable instruction signed by tenants or obligors to pay into the Lockbox. |
+| **Golden Record** | The legal register: on-chain balances combined with an encrypted identity map held by a Registrar. |
+| **Compliance Hook** | The Transfer Hook program that checks identity, sanctions, jurisdiction, lock-ups and limits on every rToken transfer. |
+| **SAS** | Solana Attestation Service. Holds the KYC and eligibility attestations that gate rToken accounts. |
+| **PDA** | Program-derived address: an account controlled by program logic, with no private key. |
+| **DvP** | Delivery versus payment: the rToken leg and the stablecoin leg settle in one transaction, or neither does. |
+| **Integration tier** | How far a third-party issuer engages with RTCS: Open, Allow-listed or Recognised. |
+| **TVL** | Total value locked on the platform. |
+| **Reg S / Reg D** | US securities exemptions. Reg S covers offerings to non-US persons. Reg D covers offerings to accredited US investors. |

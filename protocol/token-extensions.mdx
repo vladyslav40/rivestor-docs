@@ -1,0 +1,25 @@
+---
+title: "Token-2022 extensions"
+description: "The fixed extension profile every rToken is minted with, and who controls each extension."
+---
+
+A plain fungible token exercises no control over recipients and is unsuitable for regulated securities. Every rToken is minted under the SPL Token-2022 program with a fixed, audited extension profile, so compliance moves into the token itself rather than the venue.
+
+| Extension | Function within RTCS | Controlled by |
+| --- | --- | --- |
+| **Transfer Hook** | On every transfer the Solana runtime invokes the RTCS Compliance Hook. If any check fails, the whole transaction fails atomically. | RTCS Compliance Hook program (rule-set per series) |
+| **Default Account State (Frozen)** | New token accounts are created frozen and thawed only once the owner holds a valid attestation. Non-verified wallets cannot even receive rTokens. | RTCS KYC Authority (PDA) on attestation |
+| **Permanent Delegate** | Forced transfer or burn-and-reissue for lost keys, court orders, sanctions and estate succession, without diluting the register. | Security Trustee and Compliance Committee multisig |
+| **Freeze Authority** | Freezes a single account pending investigation or court order. | Security Trustee and Compliance Committee multisig |
+| **Pausable** | Halts all transfers of one mint during a corporate action, a title incident or an emergency. | Security Trustee (time-limited) |
+| **Transfer Fee** | The RTCS protocol fee on every rToken transfer, in any venue or app, with a per-transfer maximum. | Withdraw-Withheld Authority (Fee Router PDA) |
+| **Metadata Pointer and Token Metadata** | Embeds the asset identifier, the legal register reference and SHA-256 hashes of constitutional documents, valuation and leases. | Issuance program. Updates require trustee co-signature |
+| **Group and Member Pointer** | Represents the Master Series LLC as a token group and each series as a member, giving any wallet or auditor a verifiable map of the SPV Factory. | Issuance program |
+
+<Check>
+  No single Rivestor key can move, mint, freeze or burn any rToken. Every extraordinary action requires the Security Trustee's signature.
+</Check>
+
+<Note>
+  Hook-bearing tokens are not compatible with permissionless AMM pools. See [Settlement and venue](/protocol/settlement-and-venue).
+</Note>

@@ -1,0 +1,62 @@
+---
+title: "Token wrapping (Engine B)"
+description: "Lock an existing RWA token 1:1 in an RTCS vault and list the rToken. Non-custodial, in three tiers."
+---
+
+Engine B lists tokens that already trade, without waiting for each issuer to change its corporate procedures, and without Rivestor ever taking possession or control of investors' assets.
+
+## Vault mechanics (all tiers)
+
+<AccordionGroup>
+  <Accordion title="Program-owned vault">
+    Originals are deposited into a vault account owned by an RTCS program-derived address. No private key, Rivestor's or anyone else's, can withdraw them. The only exit is burning the matching rTokens.
+  </Accordion>
+  <Accordion title="1:1 invariant and proof of reserve">
+    The Vault program enforces `rToken supply = vault balance` on every mint and burn, verifiable on-chain by anyone at any time. Yield products are separate instruments.
+  </Accordion>
+  <Accordion title="Cross-chain policy">
+    RTCS wraps on Solana only and never operates its own lock-and-mint bridge. Tokens that originate on other chains are integrated through the issuer's own canonical Solana issuance, so Rivestor never holds bridge custody.
+  </Accordion>
+  <Accordion title="Baseline due diligence">
+    Each listing is reviewed against the RTCS Integration Standard using the issuer's public documents: rights attached to the token, legal structure, contract audits and the token's own transfer rules.
+  </Accordion>
+</AccordionGroup>
+
+## Integration tiers
+
+| | Tier 1: Open | Tier 2: Allow-listed | Tier 3: Recognised |
+| --- | --- | --- | --- |
+| Issuer involvement | None. For freely transferable tokens | Operational only: the issuer or its transfer agent allow-lists the vault PDA and signs a short-form Integration Letter | Full Register Recognition Agreement with the issuer and its transfer agent |
+| Legal position of the rToken holder | Exclusive on-chain right to redeem the vaulted original 1:1 | As Tier 1, plus the issuer's acknowledgement that the vault is an eligible holder and its undertaking to pay income to the vault | The rToken holder is the holder of record of the original. Legal title passes with the rToken |
+| Compliance and income | RTCS rule-set plus any rules the original enforces itself. Income routed automatically where the original pays on-chain | Union of RTCS and issuer eligibility rules. Income routed by the Distribution program. Votes relayed through the RTCS governance relay | Union of rule-sets, direct income entitlement and full corporate actions |
+| Time to list | Days | 1 to 2 weeks | 4 to 8 weeks |
+
+<Info>
+  Moving up a tier is a commercial decision rather than a precondition: liquidity first, paperwork second. Every listing shows its tier to investors.
+</Info>
+
+## Safeguards for Tiers 1 and 2
+
+- Vaults are deployed **without upgrade authority** (immutable), so no party, including Rivestor, can alter the release logic.
+- Each new vault runs under a **TVL cap** during its first months. Improvements ship as new vault versions that holders opt into.
+- Because a Tier 1 or 2 rToken may be characterized as a separate instrument comparable to a depositary receipt, it is listed only through the licensed venue entity or partner, which takes listing and disclosure responsibility. Rivestor Ltd remains a technology provider.
+
+## Wrapping cycle
+
+<Steps>
+  <Step title="Due diligence and tier assignment">
+    Review against the Integration Standard. For Tiers 2 and 3, the Integration Letter or Register Recognition Agreement is signed.
+  </Step>
+  <Step title="Allow-listing and rule mapping">
+    For Tiers 2 and 3, the issuer allow-lists the RTCS Vault PDA. The issuer's eligibility rules are mapped into the rToken's hook rule-set.
+  </Step>
+  <Step title="Vault and mint initialized">
+    The reserve becomes publicly verifiable.
+  </Step>
+  <Step title="Deposit and wrap">
+    Holders deposit originals and receive rTokens 1:1. Liquidity opens on the RTCS Venue.
+  </Step>
+  <Step title="Unwrap at any time">
+    To an eligible wallet: rTokens are burned and originals released.
+  </Step>
+</Steps>

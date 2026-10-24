@@ -32,46 +32,131 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Overview",
         "groups": [
           {
-            "group": "Get started",
+            "group": "Introduction",
             "icon": "compass",
             "pages": [
               "index",
-              "quickstart",
-              "concepts"
+              "status",
+              "how-it-works"
             ]
           },
           {
-            "group": "Account",
-            "icon": "shield-check",
+            "group": "Core concepts",
+            "icon": "book-open",
             "pages": [
-              "account/create-account",
-              "account/verification",
-              "account/security"
-            ]
-          },
-          {
-            "group": "Investing",
-            "icon": "chart-line",
-            "pages": [
-              "investing/portfolios",
-              "investing/deposits-withdrawals"
+              "concepts/rtokens",
+              "concepts/dual-engine",
+              "concepts/glossary"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "Investors",
         "groups": [
           {
-            "group": "Overview",
-            "icon": "code",
+            "group": "Get started",
+            "icon": "user-check",
             "pages": [
-              "api/overview",
-              "api/authentication",
-              "api/errors"
+              "investors/getting-started",
+              "investors/asset-classes"
+            ]
+          },
+          {
+            "group": "Trade and earn",
+            "icon": "arrow-right-left",
+            "pages": [
+              "investors/buying-and-trading",
+              "investors/income-distributions",
+              "investors/exiting-positions"
+            ]
+          },
+          {
+            "group": "Risk",
+            "icon": "triangle-alert",
+            "pages": [
+              "investors/risks"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Issuers",
+        "groups": [
+          {
+            "group": "List an asset",
+            "icon": "building-2",
+            "pages": [
+              "issuers/overview",
+              "issuers/direct-tokenization",
+              "issuers/listing-tracks",
+              "issuers/token-wrapping"
+            ]
+          },
+          {
+            "group": "Economics",
+            "icon": "receipt",
+            "pages": [
+              "issuers/fees"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Protocol",
+        "groups": [
+          {
+            "group": "Architecture",
+            "icon": "blocks",
+            "pages": [
+              "protocol/architecture",
+              "protocol/programs",
+              "protocol/token-extensions"
+            ]
+          },
+          {
+            "group": "Compliance and settlement",
+            "icon": "shield-check",
+            "pages": [
+              "protocol/compliance-hook",
+              "protocol/settlement-and-venue",
+              "protocol/security-and-governance"
+            ]
+          },
+          {
+            "group": "Integration",
+            "icon": "plug",
+            "pages": [
+              "protocol/embedded-sdk",
+              "protocol/stage-3-modules"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Legal and compliance",
+        "groups": [
+          {
+            "group": "Investor protection",
+            "icon": "landmark",
+            "pages": [
+              "legal/three-pillars",
+              "legal/spv-structure",
+              "legal/title-protection",
+              "legal/security-trustee"
+            ]
+          },
+          {
+            "group": "Regulation",
+            "icon": "scale",
+            "pages": [
+              "legal/jurisdictions",
+              "legal/regulatory-approach",
+              "legal/risk-matrix",
+              "legal/disclaimer"
             ]
           }
         ]
@@ -83,6 +168,7 @@
             "group": "Help",
             "icon": "life-buoy",
             "pages": [
+              "resources/comparison",
               "resources/faq",
               "resources/support"
             ]

@@ -6,10 +6,13 @@ Documentation for Rivestor, built on [Mintlify](https://mintlify.com).
 
 - `docs.json` — site configuration, theme colors, and navigation
 - `style.css` — "dark amethyst" styling refinements
-- `index.mdx`, `quickstart.mdx`, `concepts.mdx` — getting started
-- `account/`, `investing/` — product guides
-- `api/` — API reference
-- `resources/` — FAQ and support
+- `index.mdx`, `status.mdx`, `how-it-works.mdx` — overview
+- `concepts/` — rTokens, dual-engine model, glossary
+- `investors/` — onboarding, trading, income, exits, risks
+- `issuers/` — Engine A and Engine B listing, tracks, fees
+- `protocol/` — RTCS programs, Token-2022 extensions, Compliance Hook, venue, Embedded SDK
+- `legal/` — SPV structure, trustee, title protection, jurisdictions, risk matrix, disclaimer
+- `resources/` — comparison, FAQ, support
 
 ## Development
 

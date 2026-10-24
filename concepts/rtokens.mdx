@@ -1,0 +1,36 @@
+---
+title: "rTokens"
+description: "The universal real-world asset token standard on Solana."
+---
+
+An **rToken** is Rivestor's token standard for real-world assets. It is an SPL Token-2022 mint that carries a fixed set of extensions and is bound to the RTCS Compliance Hook. Every asset on the marketplace, whether issued natively or wrapped, trades as an rToken.
+
+## Properties
+
+| Property | Description |
+| --- | --- |
+| Standard | SPL Token-2022 with a fixed, audited extension profile. |
+| Compliance | Checked by the Compliance Hook on every transfer, in any venue or app. |
+| Backing | Engine A: 100% of the SPV's equity is represented by rTokens. Engine B: strictly 1:1 against the vaulted original. |
+| Disclosure | Token metadata embeds the asset identifier, the legal register reference and SHA-256 hashes of the constitutional documents, valuation and leases. |
+| Register | For natively issued assets the on-chain balances are the statutory register of members. |
+
+<Note>
+  An investor does not need to know which engine produced an rToken. It carries the same compliance behavior, settlement path and disclosure surface either way. Each listing does show its engine and, for wrapped assets, its integration tier.
+</Note>
+
+## Why a single standard
+
+<AccordionGroup>
+  <Accordion title="Comparability">
+    Assets follow the same rules and trade on the same rails, so they can be compared side by side.
+  </Accordion>
+  <Accordion title="Liquidity in one place">
+    Supply that would be scattered across closed venues concentrates in one order book. An external app that integrates rTokens adds demand to the same pool.
+  </Accordion>
+  <Accordion title="Reusable verification">
+    Verify once through the Solana Attestation Service and hold any rToken in any integrated app without repeating onboarding.
+  </Accordion>
+</AccordionGroup>
+
+See [Token-2022 extensions](/protocol/token-extensions) for the full profile.

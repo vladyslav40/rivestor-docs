@@ -1,0 +1,36 @@
+---
+title: "Three-pillar security architecture"
+description: "Legal isolation, financial control and on-chain compliance protect every rToken."
+---
+
+A basic token can be deployed in minutes. The harder problem is the gap between the on-chain ledger and off-chain ownership of title, and the fragmentation of the market itself. Rivestor addresses it with three inseparable layers.
+
+<CardGroup cols={3}>
+  <Card title="Layer 1: Legal isolation (SPV)" icon="landmark">
+    The asset and 100% of the equity move into a bankruptcy-remote SPV series, with an independent Security Trustee holding the Golden Share. The rToken mint address is the statutory register of members.
+  </Card>
+  <Card title="Layer 2: Financial control" icon="vault">
+    A title protection package registered in favour of the Security Trustee, a Lockbox account and an irrevocable Notice of Direction, with automated distribution on Solana.
+  </Card>
+  <Card title="Layer 3: On-chain compliance (RTCS)" icon="shield-check">
+    Token-2022 with the Compliance Hook enforces KYC/AML attestations, jurisdiction, investor count and lock-up rules on every transfer. Permanent Delegate and Freeze support court-ordered recovery.
+  </Card>
+</CardGroup>
+
+## Which layers apply
+
+| Layer | Engine A (native) | Engine B (wrapped) |
+| --- | --- | --- |
+| 1. Legal isolation | Applied in full | The issuer's responsibility, verified through the RTCS Integration Standard before wrapping |
+| 2. Financial control | Applied in full | The issuer's responsibility, verified through the Integration Standard |
+| 3. On-chain compliance | Applies | Applies without exception |
+
+## The exploitation scenario
+
+The case the structure is designed to close:
+
+<Warning>
+  The owner of a commercial building tokenizes a 10% interest through a generic smart contract. Without legal isolation, the owner keeps 100% operational control over the owning company and the building, while the other 90% of the equity sits off-chain in an ordinary share register. In time, the owner covertly sells a 60% interest to an offshore company or takes a bank loan secured against the property. The token contract knows nothing of this and keeps displaying "ownership", while the bank already holds a first-ranking charge. Such a token is a **synthetic obligation** that depends on the owner's good faith.
+</Warning>
+
+Rivestor closes the gap with the **whole-equity rule** (100% of the SPV's equity is on the register), the **Golden Share** (no sale or charge without the trustee's consent) and a **title protection package**. See [SPV structure](/legal/spv-structure) and [Title protection and Lockbox](/legal/title-protection).

@@ -1,0 +1,41 @@
+---
+title: "Jurisdictions and group structure"
+description: "A hub-and-spoke structure across the UK, UAE, US and the EU."
+---
+
+Rivestor is a UK company with its primary investor base in the UK, a strategic focus on the UAE for issuers and international investors, and an ambition to reach US retail. Each jurisdiction plays a distinct role.
+
+| Jurisdiction | Legal basis for RWA | Retail investor access | Role for Rivestor |
+| --- | --- | --- | --- |
+| **United Kingdom** | English common law. The Digital Securities Sandbox allows DLT-based issuance, trading and settlement. | The financial promotions regime restricts marketing of security tokens to retail. Operating a venue requires FCA authorization as an MTF or OTF. | Group HQ and IP owner (Rivestor Ltd). Regulated activity only through an FCA-authorized principal until Rivestor holds its own authorization. |
+| **UAE (ADGM and DIFC)** | English-law-based courts in ADGM and DIFC, with dedicated SPV and DLT Foundations regimes. Security tokens are regulated by the FSRA (ADGM) and DFSA (DIFC). | Open to international non-US capital. Professional clients first, retail via approved offering documents. | Priority hub for the regulated marketplace entity, non-US issuers and international investors. |
+| **USA (Delaware and Wyoming)** | Series LLC is enshrined in statute. Delaware Registered Series fit on-chain registers. | Accredited only under Reg D 506(c). Retail via Reg A+ Tier 2 or Reg CF, both requiring a broker-dealer or portal and a transfer agent. | Asset domicile for US-sited assets. Reg D pools for accredited US investors. US retail later via partner Reg A+. |
+| **Liechtenstein and EU** | The Blockchain Act (TVTG) and the "token container model". Security tokens are financial instruments under MiFID II and the Prospectus Regulation. MiCA does not apply to them. | Permitted in the EU with an approved prospectus and passporting across the EEA. | Stage 3 route into EU retail. A DLT MTF under the EU DLT Pilot Regime. |
+
+## Hub-and-spoke structure
+
+<Steps>
+  <Step title="Rivestor Ltd (England and Wales)">
+    TopCo, DevCo and IP owner. Owns the RTCS code, brand and marketplace interface and licenses them to group entities. Conducts no regulated activity itself, keeping the company's trade clearly defined as technology.
+  </Step>
+  <Step title="Rivestor Markets (ADGM)">
+    The regulated venue entity. Operates the RTCS Venue and primary placements once licensed by the FSRA (Stage 2). Until then, venue and arranging functions run under a licensed partner or principal.
+  </Step>
+  <Step title="AssetCo SPVs (local)">
+    A US asset sits in a Delaware Registered Series (with a single-asset subsidiary). A UK asset sits in a UK SPV Ltd. A Middle East asset sits in an ADGM SPV. Non-US multi-asset pools use a Cayman or ADGM cell structure.
+  </Step>
+  <Step title="Independent Security Trustee">
+    A licensed fiduciary unaffiliated with Rivestor, holding Golden Shares, title protection packages and the trustee keys.
+  </Step>
+  <Step title="Regulated partners">
+    An SEC-registered transfer agent and broker-dealer or ATS (US), an FCA-authorized principal (UK) and a regulated on-ramp for USDC conversion.
+  </Step>
+</Steps>
+
+## Segregation of investor pools
+
+US-sited assets are tokenized with segregated rToken pools on the same series. **US persons** are admitted only as accredited investors under Reg D, with a 12-month lock-up enforced by the hook. **Non-US investors** are admitted under Regulation S, with the distribution-compliance period enforced on-chain and no flow-back to US persons during that period. Tax structuring for non-US investors in US real estate, including withholding on US-source income and FIRPTA, is resolved at series level before launch.
+
+<Warning>
+  Regulatory positions change and legal structures require jurisdiction-specific legal and tax opinions before implementation.
+</Warning>

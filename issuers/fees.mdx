@@ -1,0 +1,33 @@
+---
+title: "Fees"
+description: "Five fee streams, who pays them and how they are collected on-chain."
+---
+
+Rivestor earns from both sides of the marketplace. Issuers pay to raise and hold capital. Investors pay to trade and exit. The success fee is due only when an issuer raises. Fees are embedded in the protocol and collected automatically where possible, with no manual billing.
+
+<Warning>
+  Rates are set per listing and may change before the Stage 2 launch. This page describes structure and collection. Contact [vs@rivestor.com](mailto:vs@rivestor.com) for the current schedule.
+</Warning>
+
+{/* TODO: confirm published rates. The Business Memo and the RTCS Memorandum state different base rates (for example the transaction fee). Do not publish numbers until reconciled. */}
+
+## B2B: issuers
+
+| Stream | Fee | Basis | How it is collected | Currency |
+| --- | --- | --- | --- | --- |
+| 1 | **Wrap fee** | One-off per series (Engine A, by listing track) or per issuer integration (Engine B). Third-party costs are passed through | Paid at series creation or integration, recorded by the Issuance or Vault program | USDC or fiat |
+| 2 | **Success fee** | Percentage of capital raised in each primary offering | Deducted by the primary-offering program at closing, before proceeds are released to the SPV | USDC |
+| 3 | **Yield spread** | Annual fee on assets under management, subordinated to investor distributions | Deducted by the Distribution program after investor distributions are calculated | USDC |
+
+## B2C: investors
+
+| Stream | Fee | Basis | How it is collected | Currency |
+| --- | --- | --- | --- | --- |
+| 4 | **Transaction fee** | Percentage of each secondary trade | (a) RTCS protocol fee: the Token-2022 Transfer Fee extension withholds it in rTokens on every transfer in any venue or app, harvested by the Fee Router PDA and sold through the venue in scheduled auctions. (b) Venue fee: charged by the Fee Router on the stablecoin leg of the DvP, net of the protocol fee so the investor never pays twice | rToken to USDC, USDC |
+| 5 | **Exit fee** | Percentage on unwrapping rTokens into the original or off-chain interests, or on sale of the asset to a third party | Charged by the Vault or redemption program at burn | USDC |
+
+## Alignment
+
+- The yield spread is subordinated to investor distributions, so the platform shares the downside if income falls.
+- Primary purchases carry no trading fee for the buyer. A buy-and-hold investor pays the transaction fee only when they eventually sell.
+- Active holders and market makers receive tiered pricing on secondary volume.

@@ -1,0 +1,19 @@
+---
+title: "Risk matrix"
+description: "The principal risk categories and the protection built into RTCS for each."
+---
+
+| Risk category | Nature of the threat | Protection and mitigation within RTCS |
+| --- | --- | --- |
+| **Regulatory perimeter** | Intervention by the SEC, FCA or FSRA alleging an unlawful offering, unauthorized arranging or an unlicensed venue. | Rivestor Ltd conducts no regulated activity itself. Regulated functions run under an FCA-authorized principal and licensed partners until own licences are granted. Reg S and Reg D segregation and jurisdiction gating are enforced by the Compliance Hook, not by policy alone. |
+| **Title divergence** | Off-chain sale, charge or dilution of the asset outside the register. | Whole-equity rule, Golden Share, title-register restriction, first-ranking charge securing the Investor Protection Deed, negative pledge and Lockbox. |
+| **Operational** | Insolvency of the property manager, or non-payment by anchor tenants or obligors. | Bankruptcy-remote SPV series with a single-asset subsidiary, Lockbox bypassing the manager, trustee's right to replace the manager on a holder resolution, reserve account sized per asset. |
+| **Integration (Engine B)** | Failure, default or legal defect of a third-party issuer's token. | Tiered Integration Standard with the tier shown on every listing. Immutable vaults with TVL caps for Tiers 1 and 2. Register Recognition Agreement in Tier 3. The rToken mirrors but never guarantees the original. Rivestor holds no key and no credit exposure. Pause and unwrap procedures. |
+| **Technology** | Program vulnerability, venue exploit or malicious upgrade. | Two independent audits, verifiable builds, timelocked upgrade multisig, no Rivestor-only key over assets, Pausable extension and bug bounty. |
+| **Key loss** | An investor loses their private keys or dies. | Permanent Delegate burn-and-reissue under Security Trustee and Compliance Committee multisig, on verified identity via the Registrar. |
+| **Liquidity** | Low trading activity in early secondary markets. | Concentrated liquidity from Engine B assets, designated market-maker programme, Liquidity Vault borrowing as an alternative to selling, and a liquidity reserve funded at issuance. Distributions are never diverted for buy-backs. |
+| **Lending and valuation** | Stale valuations leading to under-collateralized loans in Liquidity Vaults. | Conservative launch LTV, independent appraisals, haircut oracles and attested-only liquidation auctions. |
+| **Investor count and tax** | Breach of section 12(g) thresholds. Withholding or FIRPTA errors. | Hook-enforced holder caps per series, a registered transfer agent and Distribution-program withholding based on tax attestations. |
+| **Network** | Solana outage or consensus-upgrade incident. | No trade is legally settled before finalized commitment. The venue halts automatically on stalled finality. The legal register is reconstructable from the Registrar's Golden Record. |
+
+For the investor-facing summary, see [Investor risks](/investors/risks).

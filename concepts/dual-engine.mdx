@@ -1,0 +1,24 @@
+---
+title: "Dual-engine architecture"
+description: "Engine A tokenizes off-chain assets. Engine B wraps tokens that already exist. Both end in one rToken."
+---
+
+Rivestor lists assets through two complementary engines that terminate in the same token standard.
+
+| Dimension | Engine A: Direct Asset Tokenization (SPV Factory) | Engine B: 1:1 Non-Custodial Token Wrapping (RTCS Vault) |
+| --- | --- | --- |
+| Who it serves | Owners of off-chain assets (real estate, private credit, commodities, private business equity) that are not yet tokenized | Issuers whose RWA token already exists but is trapped on a closed venue |
+| Legal basis | Rivestor-standard structure: bankruptcy-remote SPV series, Golden Share, title protection package | The issuer's own legal structure, plus one of three integration tiers. An integration, not a new legal structure |
+| Rivestor's role | Structuring technology, issuance platform and venue. Never the owner of the asset | Technology integrator. Never a nominee or custodian of the originals |
+| rToken mint authority | Issuance program PDA, released only with Security Trustee co-signature | Vault program PDA, mints only against a verified deposit and burns on withdrawal |
+| Compliance rules | The RTCS rule-set for the series | The union of the RTCS rule-set and the issuer's own eligibility rules |
+| Stage | Pilot in Stage 1, full factory in Stage 2 | Starts in Stage 1, where assets are already on-chain |
+
+<CardGroup cols={2}>
+  <Card title="Engine A in detail" icon="factory" href="/issuers/direct-tokenization">
+    The onboarding cycle, from document upload to primary offering.
+  </Card>
+  <Card title="Engine B in detail" icon="package" href="/issuers/token-wrapping">
+    Vault mechanics and the three integration tiers.
+  </Card>
+</CardGroup>

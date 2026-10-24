@@ -1,0 +1,37 @@
+---
+title: "Exiting a position"
+description: "Sell on the secondary market, unwrap to the underlying asset, or borrow against your rTokens."
+---
+
+## Your options
+
+<CardGroup cols={3}>
+  <Card title="Sell" icon="arrow-right-left">
+    Sell to another eligible holder on the secondary market. Settlement is atomic.
+  </Card>
+  <Card title="Unwrap" icon="package-open">
+    Burn rTokens and receive the underlying asset, where the asset and tier allow it. An exit fee applies.
+  </Card>
+  <Card title="Borrow" icon="landmark">
+    Deposit rTokens into a Liquidity Vault to borrow stablecoins without selling. Stage 3.
+  </Card>
+</CardGroup>
+
+## Unwrapping
+
+Unwrapping burns the rToken and releases the original. It is available at any time to an eligible wallet.
+
+| Source | What happens |
+| --- | --- |
+| Engine B, Tier 1 (Open) | The vault releases the original token 1:1 when you burn the rToken. |
+| Engine B, Tier 2 (Allow-listed) | Release only to wallets eligible in the issuer's registry. |
+| Engine B, Tier 3 (Recognised) | The rToken holder is the holder of record of the original. Legal title passes with the rToken. |
+| Engine A | Unwrapping back into original or off-chain interests, or sale of the asset to a third party, charges an exit fee. |
+
+## Liquidity Vaults (Stage 3)
+
+An investor who needs cash does not have to sell. In the design, you deposit rTokens into an RTCS Liquidity Vault and borrow stablecoins against the most liquid, independently valued assets while continuing to receive the asset's net income. Launch parameters are conservative loan-to-value ratios. If collateral is liquidated, it moves only to an eligible holder through on-chain Dutch auctions restricted to attested bidders.
+
+<Warning>
+  Borrowing against rTokens carries liquidation risk. Valuations come from independent appraisals and venue prices with haircuts.
+</Warning>

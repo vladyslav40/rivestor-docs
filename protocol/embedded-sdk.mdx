@@ -1,0 +1,45 @@
+---
+title: "Embedded SDK"
+description: "How wallets, neobanks and funds will add rToken investing to their own products."
+---
+
+<Warning>
+  The Embedded SDK is a **Stage 2** deliverable (beta). There is **no public REST API** during the private beta, and this page does not document SDK method signatures. It describes the integration model.
+</Warning>
+
+## Concept
+
+Rivestor is building an embeddable SDK and widget set so a wallet, neobank, developer or fund can add rToken investing, secondary liquidity and capital raising to its own product. The aim is "Stripe for real assets": the partner owns the interface, RTCS owns the rules.
+
+## What partners reuse
+
+<CardGroup cols={2}>
+  <Card title="One credential" icon="badge-check">
+    The investor's SAS credential works across rTokens and integrated apps, so partners do not rebuild KYC per asset.
+  </Card>
+  <Card title="One order book" icon="book-open">
+    Orders route to the shared RTCS Venue, so partner demand adds to the same liquidity pool.
+  </Card>
+  <Card title="Compliance in the token" icon="shield-check">
+    The Compliance Hook enforces eligibility in every app, so a partner cannot accidentally break a series' rules.
+  </Card>
+  <Card title="Non-custodial by default" icon="key-round">
+    Investors keep their own keys. Apps request signatures instead of holding assets.
+  </Card>
+</CardGroup>
+
+## Economics for partners
+
+Every transfer generated through an integrated app carries the RTCS protocol fee through the Token-2022 Transfer Fee extension. Revenue terms for partners are agreed per integration. Contact [vs@rivestor.com](mailto:vs@rivestor.com).
+
+## Integration paths
+
+| Path | For | Status |
+| --- | --- | --- |
+| Direct program integration | Teams reading rToken state and settling on Solana | Possible against the programs once deployed |
+| Embedded SDK and widgets | Wallets, neobanks, funds, fintech apps | Stage 2 beta |
+| Partner distribution of rTokens | External apps listing rTokens | Stage 3 |
+
+<Tip>
+  To be considered for the Stage 2 beta, write to [vs@rivestor.com](mailto:vs@rivestor.com) with your use case.
+</Tip>
