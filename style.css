@@ -57,11 +57,28 @@
   border-color: var(--rv-border);
 }
 
-/* Primary button: deep plum, white text, flat. Excludes the logo link. */
+/* Launch App: monochrome, no arrow. Excludes the logo link. */
 #navbar a[href="https://rivestor.com"]:not(:has(img)) {
-  background-color: var(--rv-plum);
-  color: #ffffff;
+  background-color: #ffffff !important;
+  color: #0b0a10 !important;
+  font-weight: 600;
   box-shadow: none;
+  transition: background-color 0.2s ease;
+}
+
+#navbar a[href="https://rivestor.com"]:not(:has(img)):hover {
+  background-color: #f3f4f6 !important;
+}
+
+#navbar a[href="https://rivestor.com"]:not(:has(img)) svg {
+  display: none !important;
+}
+
+/* Ask Assistant button next to search: hidden */
+#assistant-entry,
+#navbar button[aria-label*="assistant" i],
+#navbar button[aria-label*="Ask" i] {
+  display: none !important;
 }
 
 /* Focus ring stays visible for keyboard users. */
@@ -115,4 +132,23 @@ div:has(> button[aria-label*="Ask"]) {
 #pagination a {
   padding-top: 8px;
   padding-bottom: 20px;
+}
+
+/* Sidebar active item: neutral, no purple fill and no ring */
+#sidebar-content a[data-active="true"],
+#navigation-items a[data-active="true"],
+#navigation-items a[aria-current="page"],
+#navigation-items li[data-active="true"] > a {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  color: #ffffff !important;
+  font-weight: 500;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+#sidebar-content a:focus-visible,
+#navigation-items a:focus-visible {
+  outline: 1px solid rgba(255, 255, 255, 0.28);
+  outline-offset: -1px;
+  box-shadow: none;
 }
