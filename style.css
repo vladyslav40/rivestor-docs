@@ -57,17 +57,20 @@
   border-color: var(--rv-border);
 }
 
-/* Launch App: monochrome, no arrow. Excludes the logo link. */
+/* Launch App: dark luxury glass, no arrow. Excludes the logo link. */
 #navbar a[href="https://rivestor.com"]:not(:has(img)) {
-  background-color: #ffffff !important;
-  color: #0b0a10 !important;
-  font-weight: 600;
-  box-shadow: none;
-  transition: background-color 0.2s ease;
+  background-color: rgba(18, 15, 26, 0.9) !important;
+  border: 1px solid rgba(177, 151, 230, 0.45) !important;
+  color: #ffffff !important;
+  font-size: 13.5px;
+  font-weight: 500;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 #navbar a[href="https://rivestor.com"]:not(:has(img)):hover {
-  background-color: #f3f4f6 !important;
+  border-color: #b197e6 !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 0 16px rgba(177, 151, 230, 0.25);
 }
 
 #navbar a[href="https://rivestor.com"]:not(:has(img)) svg {
@@ -134,15 +137,16 @@ div:has(> button[aria-label*="Ask"]) {
   padding-bottom: 20px;
 }
 
-/* Sidebar active item: neutral, no purple fill and no ring */
+/* Sidebar active item: amethyst veil with a fine border */
 #sidebar-content a[data-active="true"],
 #navigation-items a[data-active="true"],
 #navigation-items a[aria-current="page"],
 #navigation-items li[data-active="true"] > a {
-  background-color: rgba(255, 255, 255, 0.06) !important;
+  background-color: rgba(177, 151, 230, 0.12) !important;
+  border: 1px solid rgba(177, 151, 230, 0.28) !important;
   color: #ffffff !important;
-  font-weight: 500;
-  box-shadow: none !important;
+  font-weight: 600;
+  box-shadow: 0 0 12px rgba(177, 151, 230, 0.15) !important;
   outline: none !important;
 }
 
